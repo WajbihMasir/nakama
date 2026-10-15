@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nakama: open-source AI agents for your team</title>
+  <meta name="description" content="Nakama is an open-source AI agent platform for teams. Agents with tools, skills, memory, and channels (Telegram, WhatsApp, Discord, Slack). One server, many orgs. Nakama Cloud or one Docker container.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f3efe6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#121110" media="(prefers-color-scheme: dark)">
+  <meta property="og:title" content="Nakama: your next hire will still be human">
+  <meta property="og:description" content="Nakama runs the agents. Your team keeps the important work. Open source, MIT licensed.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" href="assets/nakama-mark.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="Primary">
+      <a class="brand" href="#top" aria-label="Nakama, back to top">
+        <img src="assets/nakama-mark.png" width="28" height="28" alt="" class="brand-mark">
+        <span>Nakama</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#capabilities">Capabilities</a></li>
+        <li><a href="#deploy">Deploy</a></li>
+        <li><a href="#compare">Compare</a></li>
+        <li><a href="https://ahmadrosid.github.io/nakama/">Docs</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a class="nav-gh" href="https://github.com/ahmadrosid/nakama" aria-label="Nakama on GitHub">
+          <svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        </a>
+        <a class="btn btn-small btn-primary" href="https://getnakama.cloud/">Try Nakama Cloud</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <img class="hero-dither" src="assets/nakama-dither.png" width="640" height="640" alt="" aria-hidden="true">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="dot" aria-hidden="true"></span>Open-source AI agent platform for teams</p>
+          <h1 id="hero-title">Your next hire will still be <em>human.</em></h1>
+          <p class="hero-lede">Nakama runs the agents. Your team keeps the important work.</p>
+          <p class="hero-body">Chat with agents in a dashboard that feels like ChatGPT. Behind it, each agent has its own tools, skills, memory, and channels, with its own identity and permissions.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://getnakama.cloud/">Try Nakama Cloud <span aria-hidden="true">→</span></a>
+            <a class="btn btn-ghost" href="https://github.com/ahmadrosid/nakama">
+              <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.75.75 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/></svg>
+              Star on GitHub
+            </a>
+          </div>
+          <ul class="hero-facts" aria-label="Key facts">
+            <li>MIT licensed</li>
+            <li>One Docker container</li>
+            <li>~200&nbsp;MB idle</li>
+          </ul>
+        </div>
+
+        <!-- Interactive demo -->
+        <div class="hero-demo">
+        <div class="console" id="console" aria-labelledby="console-title">
+          <div class="console-head">
+            <p class="console-title" id="console-title"><span class="mono">ops-agent</span> · Orbito Creative</p>
+            <button class="console-replay" type="button" id="replay" aria-label="Replay demo">
+              <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M2.5 8a5.5 5.5 0 1 0 1.7-4"/><path d="M2.5 2.5v3h3"/></svg>
+              Replay
+            </button>
+          </div>
+          <div class="channel-tabs" role="tablist" aria-label="Choose a channel">
+            <button role="tab" type="button" class="channel-tab" id="tab-telegram" aria-selected="true" aria-controls="console-feed" data-channel="telegram">Telegram</button>
+            <button role="tab" type="button" class="channel-tab" id="tab-slack" aria-selected="false" aria-controls="console-feed" data-channel="slack" tabindex="-1">Slack</button>
+            <button role="tab" type="button" class="channel-tab" id="tab-whatsapp" aria-selected="false" aria-controls="console-feed" data-channel="whatsapp" tabindex="-1">WhatsApp</button>
+            <button role="tab" type="button" class="channel-tab" id="tab-discord" aria-selected="false" aria-controls="console-feed" data-channel="discord" tabindex="-1">Discord</button>
+          </div>
+          <div class="console-feed" id="console-feed" role="tabpanel" aria-labelledby="tab-telegram" aria-live="polite">
+            <!-- Static fallback (replaced by script.js) -->
+            <div class="msg msg-human"><span class="who">Rina</span><p>Summarize yesterday's support inbox and draft replies for the refund requests.</p></div>
+            <ol class="steps">
+              <li><span class="mono">memory</span> read MEMORY.md: refund policy, tone</li>
+              <li><span class="mono">composio</span> gmail.search: 24 threads</li>
+              <li><span class="mono">skill</span> support-digest</li>
+            </ol>
+            <div class="msg msg-agent"><span class="who">ops-agent</span><p>24 threads, 19 answered. 3 refund requests need a decision. Replies drafted in your tone.</p></div>
+            <div class="handoff"><p class="handoff-label">Your call</p><p>Send 3 refund replies?</p></div>
+          </div>
+          <p class="console-foot"><span class="split-agent">Agent: the busywork</span><span class="split-human">Team: the decision</span></p>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLEM -->
+    <section class="problem" aria-labelledby="problem-title">
+      <div class="wrap problem-grid">
+        <h2 id="problem-title" class="section-title">Teams need more than a private chat window.</h2>
+        <ol class="problem-list">
+          <li>
+            <h3>Work gets stuck in private chats</h3>
+            <p>Everyone has their own ChatGPT tab. The team doesn't share agents, memory, or control, so the same context gets pasted in again every day.</p>
+          </li>
+          <li>
+            <h3>Agent tools are built for one operator</h3>
+            <p>Tools like OpenClaw and Hermes Agent are capable, but they run on one machine for one person. Teams and agencies need users, clients, roles, and channels.</p>
+          </li>
+          <li class="problem-answer">
+            <h3>Nakama is one agent workspace for the whole team</h3>
+            <p>One server, many orgs. Invites and roles. Agents isolated from each other. Set it up with managed cloud or one Docker container.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- PRODUCT SHOT -->
+    <section class="product" aria-labelledby="product-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">01 · The dashboard</p>
+          <h2 id="product-title" class="section-title">Feels like ChatGPT. Works like a team.</h2>
+          <p class="section-sub">Pick an agent, chat, and check its work. Organizations, profiles, automations, and integrations are one click away in the same sidebar.</p>
+        </div>
+        <figure class="shot">
+          <div class="shot-frame">
+            <img src="assets/dashboard.jpg" width="1600" height="1106" loading="lazy" decoding="async"
+              alt="The Nakama dashboard: an organization switcher on the far left, a sidebar with New chat, Chats, Profiles, Automations, Tasks, Integrations, System and Settings, and a chat composer that says 'Hi, good evening!' with a profile selector.">
+            <span class="pin pin-1" aria-hidden="true">1</span>
+            <span class="pin pin-2" aria-hidden="true">2</span>
+            <span class="pin pin-3" aria-hidden="true">3</span>
+          </div>
+          <figcaption>
+            <ol class="pins-legend">
+              <li><span class="pin-num" aria-hidden="true">1</span><span><strong>Org switcher.</strong> Each organization has its own members, agents, and data.</span></li>
+              <li><span class="pin-num" aria-hidden="true">2</span><span><strong>Agent work.</strong> Profiles, automations, and tasks live next to the chat.</span></li>
+              <li><span class="pin-num" aria-hidden="true">3</span><span><strong>Profile picker.</strong> Talk to the agent that owns the job, with its own tools and memory.</span></li>
+            </ol>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="how" id="how" aria-labelledby="how-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">02 · How it works</p>
+          <h2 id="how-title" class="section-title">Give an agent a soul, a toolbox, and a place to talk.</h2>
+        </div>
+        <ol class="pipeline">
+          <li class="stage">
+            <p class="stage-num mono">A</p>
+            <h3>Define the agent</h3>
+            <p>Each profile is a set of plain files. The agent keeps context across sessions, and org memory grows over time.</p>
+            <ul class="filetree mono" aria-label="Soul files">
+              <li><span>SOUL.md</span><em>identity</em></li>
+              <li><span>STYLE.md</span><em>voice</em></li>
+              <li><span>INSTRUCTIONS.md</span><em>rules</em></li>
+              <li><span>MEMORY.md</span><em>facts</em></li>
+            </ul>
+          </li>
+          <li class="stage">
+            <p class="stage-num mono">B</p>
+            <h3>Give it capabilities</h3>
+            <p>Assign tools, skills, and MCP servers per profile. Connect external apps through Composio.</p>
+            <ul class="chips" aria-label="Capability types">
+              <li>Built-in tools</li><li>Skills</li><li>MCP</li><li>Composio · 1,000+ apps</li><li>Plugins</li>
+            </ul>
+          </li>
+          <li class="stage">
+            <p class="stage-num mono">C</p>
+            <h3>Meet the team where it works</h3>
+            <p>The same agent, with the same soul, answers on every channel. Automations deliver results on a schedule.</p>
+            <ul class="chips" aria-label="Channels">
+              <li>Web</li><li>CLI</li><li>Telegram</li><li>WhatsApp</li><li>Discord</li><li>Slack</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- CAPABILITIES -->
+    <section class="caps" id="capabilities" aria-labelledby="caps-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">03 · Capabilities</p>
+          <h2 id="caps-title" class="section-title">Built for teams from day one.</h2>
+        </div>
+
+        <div class="caps-feature">
+          <div class="caps-feature-copy">
+            <h3>Automations that report back</h3>
+            <p>Schedule agent work on a timer and send results to Telegram, WhatsApp, or Discord. A daily standup digest posts itself; your team reads it over coffee.</p>
+            <p class="small mono">Agent work → Automations → Send results to</p>
+          </div>
+          <figure class="caps-feature-shot">
+            <img src="assets/automation.png" width="1280" height="900" loading="lazy" decoding="async"
+              alt="Nakama 'Edit automation' dialog for a 'Daily standup digest' with the prompt 'Summarize yesterday's standup', Run on schedule enabled, and results sent to a Discord channel.">
+          </figure>
+        </div>
+
+        <dl class="spec">
+          <div class="spec-row">
+            <dt>Organizations &amp; roles</dt>
+            <dd>Orgs are tenants. Invite people as admin, member, or viewer. Profiles, sessions, automations, tools, and usage stay isolated per org.</dd>
+          </div>
+          <div class="spec-row">
+            <dt>Souls &amp; memory</dt>
+            <dd>Identity, voice, rules, and memory live in files you can read and edit. Profiles can move between organizations.</dd>
+          </div>
+          <div class="spec-row">
+            <dt>Skills that get reviewed</dt>
+            <dd>Agents can turn successful work into reusable skills. Skills keep a version history, and member-written skill code waits for an admin review.</dd>
+          </div>
+          <div class="spec-row">
+            <dt>Tools, MCP &amp; Composio</dt>
+            <dd>Built-in tools, your own MCP servers, and more than 1,000 external apps through Composio. Assign them per profile with <code>/add-tool</code> and <code>/add-mcp</code>.</dd>
+          </div>
+          <div class="spec-row">
+            <dt>Coding agents</dt>
+            <dd>Start Codex, Claude Code, OpenCode, or Cursor Agent from a chat to write and change code, including Nakama itself.</dd>
+          </div>
+          <div class="spec-row">
+            <dt>Plugins</dt>
+            <dd>Bundled plugins add workflows, Supermemory, and Google Meet. Build your own for what your team needs.</dd>
+          </div>
+          <div class="spec-row">
+            <dt>Bring your model</dt>
+            <dd>Connect the provider you already pay for, including OpenRouter, Mistral, Together AI, Moonshot Kimi, and ChatGPT Plus/Pro through Codex OAuth. See usage and cost per reply.</dd>
+          </div>
+          <div class="spec-row">
+            <dt>Web, CLI &amp; desktop</dt>
+            <dd>A web dashboard, a terminal client, and a macOS desktop app, all thin clients of one server with interactive API docs at <code>/docs</code>.</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- USE CASES -->
+    <section class="uses" id="uses" aria-labelledby="uses-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">04 · Who it's for</p>
+          <h2 id="uses-title" class="section-title">Two kinds of teams use one platform.</h2>
+        </div>
+        <div class="buyers">
+          <article class="buyer">
+            <p class="buyer-tag mono">Team leads</p>
+            <h3>Operations, support, founders</h3>
+            <p>Shared agents on the web, Telegram, and WhatsApp, not a dozen personal ChatGPT accounts. One memory the whole team builds on.</p>
+          </article>
+          <article class="buyer">
+            <p class="buyer-tag mono">Agencies &amp; freelancers</p>
+            <h3>Many clients, one install</h3>
+            <p>Give each client its own organization, with isolated agents, memory, and channels. One installation serves every client workspace.</p>
+          </article>
+        </div>
+
+        <h3 class="uses-list-title">What teams build with it</h3>
+        <ol class="uses-list">
+          <li><h4>Build an AI product</h4><p>Use Nakama as the agent backend for your customer-facing application.</p></li>
+          <li><h4>Orchestrate your agents</h4><p>Coordinate multiple agents, assign tasks, and bring their work together in one workflow.</p></li>
+          <li><h4>Manage your CRM</h4><p>Update customer records and help your team keep up with follow-ups.</p></li>
+          <li><h4>Manage social media</h4><p>Find ideas and prepare posts for your team's review.</p></li>
+          <li><h4>Write a book with multiple agents</h4><p>A team of agents that research, draft, and edit with you.</p></li>
+          <li><h4>Automate daily reports</h4><p>Gather updates and prepare reports on a recurring schedule.</p></li>
+          <li><h4>Turn podcasts into short clips</h4><p>Agents that edit long recordings into videos for Reels and TikTok.</p></li>
+          <li><h4>Email, docs &amp; calendar</h4><p>Read and reply to email, change Google Docs and Sheets, and manage events.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- DEPLOY -->
+    <section class="deploy" id="deploy" aria-labelledby="deploy-title">
+      <div class="wrap deploy-grid">
+        <div class="deploy-copy">
+          <p class="kicker">05 · Deploy</p>
+          <h2 id="deploy-title" class="section-title">Running in minutes. On our servers or yours.</h2>
+          <p class="section-sub">Self-host it like WordPress, or let Nakama Cloud handle hosting. Either way, a setup wizard asks for your provider and API key on first run.</p>
+          <ul class="deploy-notes">
+            <li><strong>~200&nbsp;MB</strong> idle. 1 vCPU and 1&nbsp;GB is enough for the server on its own.</li>
+            <li><strong>One container.</strong> Data in a single volume, dashboard on port 4310.</li>
+          </ul>
+        </div>
+
+        <div class="deploy-panel">
+          <div class="deploy-tabs" role="tablist" aria-label="Deployment options">
+            <button role="tab" type="button" id="dtab-cloud" aria-selected="true" aria-controls="dpanel-cloud">Nakama Cloud</button>
+            <button role="tab" type="button" id="dtab-docker" aria-selected="false" aria-controls="dpanel-docker" tabindex="-1">Docker</button>
+            <button role="tab" type="button" id="dtab-bun" aria-selected="false" aria-controls="dpanel-bun" tabindex="-1">Bun (local)</button>
+          </div>
+
+          <div class="deploy-body" role="tabpanel" id="dpanel-cloud" aria-labelledby="dtab-cloud" tabindex="0">
+            <p class="deploy-lead">The least work. No Bun, Docker, or VPS needed.</p>
+            <ol class="cloud-steps">
+              <li>Create an account.</li>
+              <li>Provision an instance.</li>
+              <li>Finish the setup wizard in the browser.</li>
+            </ol>
+            <a class="btn btn-primary" href="https://getnakama.cloud/">Try Nakama Cloud <span aria-hidden="true">→</span></a>
+          </div>
+
+          <div class="deploy-body" role="tabpanel" id="dpanel-docker" aria-labelledby="dtab-docker" tabindex="0" hidden>
+            <p class="deploy-lead">Prebuilt image, one container.</p>
+            <div class="code">
+              <button class="copy" type="button" data-copy="docker-cmd">Copy</button>
+<pre id="docker-cmd"><code><span class="c"># Pull and run the latest image</span>
+docker pull ghcr.io/ahmadrosid/nakama:latest
+docker run -d -p 4310:4310 \
+  -v nakama-data:/nakama/data \
+  --name nakama ghcr.io/ahmadrosid/nakama:latest</code></pre>
+            </div>
+            <p class="small">Then open <code>http://localhost:4310</code>. Check the <a href="https://ahmadrosid.github.io/nakama/docker#requirements">requirements</a> before enabling channel workers.</p>
+          </div>
+
+          <div class="deploy-body" role="tabpanel" id="dpanel-bun" aria-labelledby="dtab-bun" tabindex="0" hidden>
+            <p class="deploy-lead">From source, with <a href="https://bun.sh">Bun</a>.</p>
+            <div class="code">
+              <button class="copy" type="button" data-copy="bun-cmd">Copy</button>
+<pre id="bun-cmd"><code>git clone https://github.com/ahmadrosid/nakama.git
+cd nakama
+bun install
+bun run dev:web</code></pre>
+            </div>
+            <p class="small">The web dashboard opens at <code>http://localhost:3003</code> and starts the server if needed.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPARE -->
+    <section class="compare" id="compare" aria-labelledby="compare-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">06 · Compare</p>
+          <h2 id="compare-title" class="section-title">Not only a chatbot. Not a tool for one operator.</h2>
+          <p class="section-sub">Coming from OpenClaw or Hermes Agent? Same class of capability, without the setup maze, and not limited to one operator on one machine.</p>
+        </div>
+        <div class="table-scroll" tabindex="0" role="region" aria-label="Comparison table, scrolls horizontally on small screens">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th scope="col"><span class="visually-hidden">Function</span></th>
+                <th scope="col">ChatGPT / Claude Team</th>
+                <th scope="col">OpenClaw-style tools</th>
+                <th scope="col" class="is-nakama">Nakama</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Shared team agents</th><td>Limited</td><td>One operator</td><td class="is-nakama">Yes</td></tr>
+              <tr><th scope="row">Multi-tenant orgs</th><td>No</td><td>No</td><td class="is-nakama">Yes</td></tr>
+              <tr><th scope="row">Channels</th><td>Limited</td><td>Often available</td><td class="is-nakama">Web, CLI, Telegram, WhatsApp, Discord, Slack</td></tr>
+              <tr><th scope="row">Durable memory</th><td>Chat history</td><td>One machine</td><td class="is-nakama">Per org and per profile</td></tr>
+              <tr><th scope="row">Deployment</th><td>SaaS only</td><td>One local system</td><td class="is-nakama">Docker or Cloud</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- OPEN SOURCE -->
+    <section class="oss" id="community" aria-labelledby="oss-title">
+      <div class="wrap oss-grid">
+        <div>
+          <p class="kicker">07 · Open source</p>
+          <h2 id="oss-title" class="section-title">MIT licensed. Read every line.</h2>
+          <p class="section-sub">Nakama is built in the open. The architecture, the threat model, and the changelog are all in the repo.</p>
+        </div>
+        <ul class="oss-links">
+          <li><a href="https://github.com/ahmadrosid/nakama"><span class="mono">github.com/ahmadrosid/nakama</span><span>Source, issues, and releases</span></a></li>
+          <li><a href="https://discord.com/invite/Cwq3erYvh"><span class="mono">Discord</span><span>Ask questions and share what you built</span></a></li>
+          <li><a href="https://github.com/ahmadrosid/nakama/blob/main/CONTRIBUTING.md"><span class="mono">CONTRIBUTING.md</span><span>How to send your first pull request</span></a></li>
+          <li><a href="https://demo.getnakama.cloud"><span class="mono">demo.getnakama.cloud</span><span>Click around a public demo instance</span></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final" aria-labelledby="final-title">
+      <div class="wrap final-inner">
+        <img class="final-mark" src="assets/nakama-dither.png" width="640" height="640" alt="" aria-hidden="true">
+        <h2 id="final-title">Keep the important work. <em>Hand off the rest.</em></h2>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="https://getnakama.cloud/">Try Nakama Cloud <span aria-hidden="true">→</span></a>
+          <a class="btn btn-ghost" href="https://ahmadrosid.github.io/nakama/">Read the docs</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="#top"><img src="assets/nakama-mark.png" width="28" height="28" alt="" class="brand-mark"><span>Nakama</span></a>
+        <p>Your next hire will still be human.</p>
+      </div>
+      <nav aria-label="Product">
+        <h2 class="footer-h">Product</h2>
+        <ul>
+          <li><a href="https://getnakama.cloud/">Nakama Cloud</a></li>
+          <li><a href="https://ahmadrosid.github.io/nakama/">Documentation</a></li>
+          <li><a href="https://github.com/ahmadrosid/nakama/releases?q=desktop-v">Desktop app (macOS)</a></li>
+          <li><a href="https://github.com/ahmadrosid/nakama/blob/main/CHANGELOG.md">Changelog</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Project">
+        <h2 class="footer-h">Project</h2>
+        <ul>
+          <li><a href="https://github.com/ahmadrosid/nakama">GitHub</a></li>
+          <li><a href="https://discord.com/invite/Cwq3erYvh">Discord</a></li>
+          <li><a href="https://github.com/ahmadrosid/nakama/blob/main/ARCHITECTURE.md">Architecture</a></li>
+          <li><a href="https://github.com/ahmadrosid/nakama/blob/main/LICENSE">MIT License</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="wrap">
+      <div class="footer-base">
+        <p>Open source under the MIT License.</p>
+        <p class="mono">ghcr.io/ahmadrosid/nakama</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
